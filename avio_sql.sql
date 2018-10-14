@@ -35,7 +35,7 @@ VALUES
 CREATE TABLE Aircraft_crew (
   Aircraft_crew_id INT NOT NULL,
   Aircraft_id INTEGER REFERENCES Aircraft,
-  Crew_id INTEGER REFERENCES Crew,
+  Crew_id INTEGER REFERENCES Crew, 
   Login_date TIMESTAMP,  
   PRIMARY KEY (Aircraft_crew_id)
   );
@@ -67,7 +67,7 @@ FROM Crew_members
 WHERE Date_of_Birth IN(SELECT TOP 3 Date_of_birth FROM Crew_members 
 ORDER BY Date_of_Birth DESC) LIMIT 1
 	  --or this one
-	  select Name from Crew_members order by Date_of_Birth LIMIT 1 OFFSET 2 --3,4,5 ili koji veæ pita
+	  select Name from Crew_members order by Date_of_Birth LIMIT 1 OFFSET 2 --3,4,5 ili koji veÃ¦ pita
 
 Select Name from Crew_members 
 Order by (select Count(*) from Aircraft_crew where 
